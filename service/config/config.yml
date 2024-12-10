@@ -1,0 +1,12 @@
+mode: dev
+
+Server:
+  RunMode: dev
+  HttpPort: 8080
+
+App:
+  LogSavePath: storage/logs
+  LogFileName: app
+  LogFileExt: .log
+
+Database:
