@@ -1,5 +1,9 @@
 const Lobbies = () => {
-  return <>登入</>
-}
+	return (
+		<>
+			<div className={'text-red-600 text-2xl'}>登入</div>
+		</>
+	);
+};
 
-export default Lobbies
+export default Lobbies;
