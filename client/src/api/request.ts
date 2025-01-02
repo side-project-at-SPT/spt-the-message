@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance } from "axios";
 
 type GetApiParams = {
   apiPath: string;
@@ -21,44 +21,44 @@ const axiosInstance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
-})
+});
 
 export async function getApi<T>(params: GetApiParams): Promise<ApiResponse<T | null>> {
-  const { apiPath, restfulParams } = params
+  const { apiPath, restfulParams } = params;
   const urlParam = restfulParams?.reduce<null | string | number>((result, paramItem) => {
     if (paramItem) {
-      result = result ? result : ''
-      return result + '/' + paramItem
+      result = result ? result : "";
+      return result + "/" + paramItem;
     }
-    return result
-  }, null)
+    return result;
+  }, null);
 
-  const url = urlParam ? apiPath + urlParam : apiPath
+  const url = urlParam ? apiPath + urlParam : apiPath;
   const response = await axiosInstance.get(url);
-  return response.status === 200 ? response.data : null
+  return response.status === 200 ? response.data : null;
 }
 
 export async function postAip<T, R>(params: ApiParams<T>): Promise<ApiResponse<R | null>> {
-  const { apiPath, data } = params
-  const response = await axiosInstance.post(apiPath, data)
+  const { apiPath, data } = params;
+  const response = await axiosInstance.post(apiPath, data);
 
-  return response.status === 200 ? response.data : null
+  return response.status === 200 ? response.data : null;
 }
 
 export async function putApi<T, R>(params: ApiParams<T>): Promise<ApiResponse<R | null>> {
-  const { apiPath, data } = params
-  const response = await axiosInstance.put(apiPath, data)
+  const { apiPath, data } = params;
+  const response = await axiosInstance.put(apiPath, data);
 
-  return response.status === 200 ? response.data : null
+  return response.status === 200 ? response.data : null;
 }
 
 export async function delApi<T, R>(params: ApiParams<T>): Promise<ApiResponse<R | null>> {
-  const { apiPath, data } = params
-  const response = await axiosInstance.delete(apiPath, data!)
+  const { apiPath, data } = params;
+  const response = await axiosInstance.delete(apiPath, data!);
 
-  return response.status === 200 ? response.data : null
+  return response.status === 200 ? response.data : null;
 }
 
 

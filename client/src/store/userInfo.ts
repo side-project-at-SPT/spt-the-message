@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 type UserInfo = {
   name: string;
@@ -8,7 +8,7 @@ type UserStore = {
   userInfo: UserInfo | null;
 };
 
-export const useUserInfoStore = create<UserStore>((set) => ({
+export const useUserInfoStore = create<UserStore>((set: (partial: UserStore) => void) => ({
   userInfo: null,
   /**
    * api request get userInfo
