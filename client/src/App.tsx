@@ -1,12 +1,12 @@
-import { routerMap } from './router/index'
-import './index.css';
+import { routerMap } from "./router/index";
+import "./index.css";
 import {
   Routes,
   Route,
   Navigate,
   BrowserRouter
-} from 'react-router-dom';
-import { Suspense } from 'react'
+} from "react-router-dom";
+import { Suspense } from "react";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
         />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
