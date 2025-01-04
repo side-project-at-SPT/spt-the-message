@@ -9,7 +9,11 @@ const Lobby = () => {
 
   return (
     <>
-      <img src={backgroundImage} alt="background" className="absolute object-cover min-w-full h-dvh inset-0" />
+      <img
+        src={backgroundImage}
+        alt="background"
+        className="absolute object-cover min-w-full h-dvh inset-0"
+      />
       <div className="container max-w-xl mx-auto mt-36 relative">
         <div className={"text-red-600 text-2xl"}>登入</div>
         <button onClick={handleClick}>前往大廳</button>
