@@ -8,6 +8,6 @@
 ## Development
 ### Installation
 ```shell
-    go get -d
+    go install
 ```
 
