@@ -8,7 +8,17 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "lint-staged": "lint-staged",
     "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "packages/**/locales/**/*.json": [
+      "pnpm run sort-translation"
+    ]
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
