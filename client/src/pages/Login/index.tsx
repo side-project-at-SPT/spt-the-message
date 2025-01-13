@@ -6,7 +6,7 @@ const Lobby = () => {
   const handleClick = () => {
     navigate("/lobby");
   };
-
+  console.log("123");
   return (
     <>
       <img
