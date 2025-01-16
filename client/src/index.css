@@ -1,3 +1,163 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	/* default color */
+	--text-primary: rgba(0, 105, 137, 1);
+	--text-warning: rgba(249, 58, 83, 1);
+	--text-success: rgba(0, 205, 157, 1);
+	--white: rgba(255, 255, 255, 1);
+	--active: rgba(131, 255, 220, 1);
+	--yellow-100: rgba(255, 247, 174, 1);
+	--yellow-200: rgba(255, 222, 123, 1);
+	--yellow-300: rgba(255, 194, 59, 1);
+	--yellow-400: rgba(255, 146, 0, 1);
+	--blue-100: rgba(179, 217, 255, 1);
+	--blue-200: rgba(121, 197, 252, 1);
+	--blue-300: rgba(86, 178, 246, 1);
+	--blue-400: rgba(43, 156, 239, 1);
+	--red-100: rgba(252, 192, 180, 1);
+	--red-200: rgba(255, 172, 149, 1);
+	--red-300: rgba(251, 132, 100, 1);
+	--red-400: rgba(231, 80, 39, 1);
+	--green-100: rgba(202, 246, 126, 1);
+	--green-200: rgba(186, 234, 105, 1);
+	--green-300: rgba(161, 213, 72, 1);
+	--green-400: rgba(121, 191, 0, 1);
+	--gray-100: rgba(219, 223, 224, 1);
+	--gray-200: rgba(175, 183, 185, 1);
+	--gray-300: rgba(145, 154, 156, 1);
+	--gray-400: rgba(107, 115, 117, 1);
+
+	/* default gradient light */
+	--yellow-grad-light: linear-gradient(180deg, #fffad4 0%, #fff7ae 100%);
+	--blue-grad-light: linear-gradient(180deg, #cce6ff 0%, #b3d9ff 100%);
+	--red-grad-light: linear-gradient(180deg, #ffd5cc 0%, #fcc0b4 100%);
+	--green-grad-light: linear-gradient(180deg, #e4ffb5 0%, #caf67e 100%);
+	--gray-grad-light: linear-gradient(180deg, #ffffff 0%, #dbdfe0 100%);
+
+	/* default gradient dark */
+	--yellow-grad-dark: linear-gradient(180deg, #fff7ae 0%, #ff9200 100%);
+	--blue-grad-dark: linear-gradient(180deg, #b3d9ff 0%, #2b9cef 100%);
+	--red-grad-dark: linear-gradient(180deg, #fcc0b4 0%, #e75027 100%);
+	--green-grad-dark: linear-gradient(180deg, #caf67e 0%, #79bf00 100%);
+	--gray-grad-dark: linear-gradient(180deg, #afb7b9 0%, #6b7375 100%);
+
+	/* other gradient color */
+	--bg-gradient: linear-gradient(180deg, #ffffff 0%, #daffff 100%);
+}
+
+@layer utilities {
+	.text-primary {
+		color: var(--text-primary);
+	}
+	.text-warning {
+		color: var(--text-warning);
+	}
+	.text-success {
+		color: var(--text-success);
+	}
+	.text-white {
+		color: var(--white);
+	}
+	.active {
+		color: var(--active);
+	}
+	.yellow-100 {
+		color: var(--yellow-100);
+	}
+	.yellow-200 {
+		color: var(--yellow-200);
+	}
+	.yellow-300 {
+		color: var(--yellow-300);
+	}
+	.yellow-400 {
+		color: var(--yellow-400);
+	}
+	.blue-100 {
+		color: var(--blue-100);
+	}
+	.blue-200 {
+		color: var(--blue-200);
+	}
+	.blue-300 {
+		color: var(--blue-300);
+	}
+	.blue-400 {
+		color: var(--blue-400);
+	}
+	.red-100 {
+		color: var(--red-100);
+	}
+	.red-200 {
+		color: var(--red-200);
+	}
+	.red-300 {
+		color: var(--red-300);
+	}
+	.red-400 {
+		color: var(--red-400);
+	}
+	.green-100 {
+		color: var(--green-100);
+	}
+	.green-200 {
+		color: var(--green-200);
+	}
+	.green-300 {
+		color: var(--green-300);
+	}
+	.green-400 {
+		color: var(--green-400);
+	}
+	.gray-100 {
+		color: var(--gray-100);
+	}
+	.gray-200 {
+		color: var(--gray-200);
+	}
+	.gray-300 {
+		color: var(--gray-300);
+	}
+	.gray-400 {
+		color: var(--gray-400);
+	}
+	.bg-primary {
+		background: linear-gradient(180deg, #ffffff 0%, #daffff 100%);
+	}
+	.modal-overlay {
+		color: rgba(15, 42, 48, 0.9);
+	}
+	.yellow-grad-light {
+		background: var(--yellow-grad-light);
+	}
+	.yellow-grad-dark {
+		background: var(--yellow-grad-dark);
+	}
+	.blue-grad-light {
+		background: var(--blue-grad-light);
+	}
+	.blue-grad-dark {
+		background: var(--blue-grad-dark);
+	}
+	.red-grad-light {
+		background: var(--red-grad-light);
+	}
+	.red-grad-dark {
+		background: var(--red-grad-dark);
+	}
+	.green-grad-light {
+		background: var(--green-grad-light);
+	}
+	.green-grad-dark {
+		background: var(--green-grad-dark);
+	}
+	.gray-grad-light {
+		background: var(--gray-grad-light);
+	}
+	.gray-grad-dark {
+		background: var(--gray-grad-dark);
+	}
+}
