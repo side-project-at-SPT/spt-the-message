@@ -55,13 +55,14 @@ export default {
       "green-grad-light": "linear-gradient(180deg, #E4FFB5 0%, #CAF67E 100%)",
       "green-grad-dark": "linear-gradient(180deg, #CAF67E 0%, #79BF00 100%)",
       "gray-grad-light": "linear-gradient(180deg, #FFFFFF 0%, #DBDFE0 100%)",
-      "gray-grad-dark": "linear-gradient(180deg, #AFB7B9 0%, #6B7375 100%)"
+      "gray-grad-dark": "linear-gradient(180deg, #AFB7B9 0%, #6B7375 100%)",
+      "room-card-gradient":"linear-gradient(180deg, #FFFFFF 0%, #DAFFFF 100%)",
     },
     boxShadow: {
       org: "0px 4px 0px 0px rgba(255, 146, 0, 1)",
-      blue: "0px 20px 0px 0px rgba(39, 184, 224, 1)",
-      gray: "0px 4px 0px 0px rgba(145, 154, 156, 1)"
-
+      blue: "0px 4px 0px 0px rgba(39, 184, 224, 1)",
+      gray: "0px 4px 0px 0px rgba(145, 154, 156, 1)",
+      "login-blue": "0px 20px 0px 0px rgba(39, 184, 224, 1)",
     }
   },
   plugins: [],
