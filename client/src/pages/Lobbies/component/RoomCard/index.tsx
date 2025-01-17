@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import "./style.css";
 
 type Props = {
   roomType: "open" | "closed" | "underway";
