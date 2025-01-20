@@ -1,12 +1,11 @@
 import { useMemo } from "react";
+import type { RoomItem } from "./type";
 
-type Props = {
-  roomType: "open" | "closed" | "underway";
-  personNum: number;
-  roomName: string;
+export type Props = RoomItem & {
+  className?: string;
 };
 
-const RoomCard = ({ roomType, personNum, roomName }: Props) => {
+const RoomCard = ({ roomType, personNum, roomName, className }: Props) => {
   const roomTypeText = useMemo(() => {
     if (roomType === "open") {
       return "開放中";
@@ -20,6 +19,7 @@ const RoomCard = ({ roomType, personNum, roomName }: Props) => {
   return (
     <div
       className={`w-[278px] h-[194px] border-4  rounded-3xl bg-room-card-gradient flex flex-col justify-end items-center relative 
+      ${className}
       ${roomType === "open" && "shadow-blue"} 
       ${roomType === "open" ? "border-active" : "border-white"}
       `}
