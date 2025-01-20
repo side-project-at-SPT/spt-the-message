@@ -6,16 +6,18 @@ type Props = {
   defaultName: string;
   open: boolean;
   title: string;
+  submitBtnText?: string;
   onSubmit: (newName: string) => void;
   onCancel: () => void;
 };
 
-const EditNameModal = ({
+const InputModal = ({
   onCancel,
   onSubmit,
   defaultName,
   open,
   title,
+  submitBtnText,
 }: Props) => {
   const [userName, setUserName] = useState<string>(defaultName);
 
@@ -75,7 +77,7 @@ const EditNameModal = ({
             <Button buttonType="cancel" buttonText="取消" onClick={onCancel} />
             <Button
               buttonType="submit"
-              buttonText="確認修改"
+              buttonText={submitBtnText ?? "確認修改"}
               onClick={handleSubmit}
             />
           </div>
@@ -90,4 +92,4 @@ const EditNameModal = ({
   );
 };
 
-export default EditNameModal;
+export default InputModal;
