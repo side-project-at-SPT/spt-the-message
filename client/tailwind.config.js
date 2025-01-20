@@ -7,11 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "rgba(0, 105, 137, 1)",
-        warning: "rgba(249, 58, 83, 1)",
-        success: "rgba(0, 205, 157, 1)",
-        white: "rgba(255, 255, 255, 1)",
-        active: "rgba(131, 255, 220, 1)",
+        primary: "var(--text-primary)",
+        warning: "var(--text-warning)",
+        success: "var(--text-success)",
+        white: "var(--text-white)",
+        active: "var(--text-active)",
+        "btn-submit":"var(--btn-submit-text)",
         yellow: {
           100: "rgba(255, 247, 174, 1)",
           200: "rgba(255, 222, 123, 1)",
@@ -42,7 +43,7 @@ export default {
           300: "rgba(145, 154, 156, 1)",
           400: "rgba(107, 115, 117, 1)",
         },
-        "modal-overlay": "rgba(15, 42, 48, 0.9)",
+        "modal-overlay": "var(--modal-overlay)",
       },
     },
     backgroundImage: {
@@ -56,7 +57,9 @@ export default {
       "green-grad-dark": "linear-gradient(180deg, #CAF67E 0%, #79BF00 100%)",
       "gray-grad-light": "linear-gradient(180deg, #FFFFFF 0%, #DBDFE0 100%)",
       "gray-grad-dark": "linear-gradient(180deg, #AFB7B9 0%, #6B7375 100%)",
-      "room-card-gradient":"linear-gradient(180deg, #FFFFFF 0%, #DAFFFF 100%)",
+      "room-card-gradient": "linear-gradient(180deg, #FFFFFF 0%, #DAFFFF 100%)",
+      "submitBtn": "linear-gradient(180deg, #FFFBD6 0%, #FFBA39 100%)",
+      "cancelBtn":""
     },
     boxShadow: {
       org: "0px 4px 0px 0px rgba(255, 146, 0, 1)",
