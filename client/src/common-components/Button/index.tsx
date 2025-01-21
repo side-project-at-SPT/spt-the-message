@@ -21,7 +21,6 @@ const Button = ({ buttonType, buttonText, onClick, className }: Props) => {
 
   return (
     <button className={style} onClick={onClick}>
-      {" "}
       {buttonText}
     </button>
   );
