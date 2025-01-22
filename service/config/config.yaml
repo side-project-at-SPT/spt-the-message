@@ -5,13 +5,11 @@ Server:
   HttpPort: 8080
 
 Database:
-  DBType: mysql
+  DBType: postgres
   Username: user
-  Password: test
-  Host: 127.0.0.1:3306
-  DBName: test_app
-  TablePrefix: test_
+  Password: password
+  Host: 127.0.0.1:5431
+  DBName: the_message
   Charset: utf8
-  ParseTime: True
   MaxIdleConns: 10
   MaxOpenConns: 30

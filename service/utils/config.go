@@ -3,7 +3,6 @@ package utils
 import (
 	"fmt"
 	"github.com/spf13/viper"
-	"os"
 )
 
 var Config *viper.Viper
@@ -13,9 +12,9 @@ func InitConfig() {
 }
 
 func initViper() *viper.Viper {
-	env := GetEnv("ENV", "dev")
-	configPath := GetEnv("CONFIG_DIR", "./service/config")
-	configFileName := GetEnv("CONFIG_ENV", "config")
+	env := "dev"
+	configPath := "./service/config"
+	configFileName := "config"
 	fmt.Printf("ENV: %s, CONFIG_DIR: %s, CONFIG_ENV", env, configPath, configFileName+".json")
 
 	v := viper.New()
@@ -25,18 +24,11 @@ func initViper() *viper.Viper {
 	v.AddConfigPath(configPath)
 
 	if err := v.ReadInConfig(); err == nil {
-		fmt.Println("Using config file:", v.ConfigFileUsed())
+		fmt.Println("Using config file:", v.AllSettings())
 	} else {
 		fmt.Println("Error:", err)
 		panic(err)
 	}
 
 	return v
-}
-
-func GetEnv(key, defaultValue string) string {
-	if value, ok := os.LookupEnv(key); ok {
-		return value
-	}
-	return defaultValue
 }

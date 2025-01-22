@@ -5,9 +5,13 @@ import (
 	"spt-the-message/utils"
 )
 
+func init() {
+	utils.InitConfig()
+	utils.InitDB()
+}
+
 func main() {
 	fmt.Println("Hello, World!")
-	utils.InitConfig()
 
 	//r := gin.Default()
 	//r.GET("/ping", func(c *gin.Context) {
