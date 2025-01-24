@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { TextField, Dialog, DialogContent } from "@mui/material";
-import Button from "../Button";
+import Button, { ButtonType } from "../Button";
+import penguinImg from "@/assets/edit-penguin.webp";
 
 type Props = {
   defaultName: string;
@@ -42,7 +43,7 @@ const InputModal = ({
       }}
       PaperProps={{
         sx: {
-          backgroundColor: "#ffffff00",
+          backgroundColor: "var(--overlay)",
           boxShadow: "0px 0px 0px 0px",
         },
       }}
@@ -74,19 +75,19 @@ const InputModal = ({
             }}
           />
           <div className="mt-16 flex justify-between">
-            <Button buttonType="cancel" buttonText="取消" onClick={onCancel} />
             <Button
-              buttonType="submit"
+              buttonType={ButtonType.Cancel}
+              buttonText="取消"
+              onClick={onCancel}
+            />
+            <Button
+              buttonType={ButtonType.Submit}
               buttonText={submitBtnText ?? "確認修改"}
               onClick={handleSubmit}
             />
           </div>
         </div>
-        <img
-          src="src/assets/edit-penguin.webp"
-          alt=""
-          className="w-[320px] h-[320px]"
-        />
+        <img src={penguinImg} alt="" className="w-[320px] h-[320px]" />
       </DialogContent>
     </Dialog>
   );

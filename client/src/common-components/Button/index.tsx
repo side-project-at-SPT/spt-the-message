@@ -1,17 +1,20 @@
 import { useMemo } from "react";
+export const enum ButtonType {
+  Submit = "submit",
+  Cancel = "cancel",
+}
 
 type Props = {
-  buttonType: "submit" | "cancel";
+  buttonType: ButtonType;
   buttonText: string;
-  onClick: () => void;
   className?: string;
+  onClick: () => void;
 };
 
+const defaultClass =
+  "w-[140px] h-[50px] rounded-[30px]  hover:shadow-transparent hover:translate-y-0.5 border-[1px] text-xl";
 const Button = ({ buttonType, buttonText, onClick, className }: Props) => {
   const style: string = useMemo(() => {
-    const defaultClass =
-      "w-[140px] h-[50px] rounded-[30px]  hover:shadow-transparent hover:translate-y-0.5 border-[1px] text-xl";
-
     if (buttonType === "cancel") {
       return `${defaultClass} ${className} bg-gray-grad-dark shadow-gray text-white border-gray-100`;
     }
@@ -21,7 +24,6 @@ const Button = ({ buttonType, buttonText, onClick, className }: Props) => {
 
   return (
     <button className={style} onClick={onClick}>
-      {" "}
       {buttonText}
     </button>
   );

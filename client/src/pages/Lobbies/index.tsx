@@ -1,32 +1,33 @@
-import { useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import RoomCard from "./component/RoomCard";
+import RoomCard, { RoomItem } from "./component/RoomCard";
 import InputModal from "../../common-components/InputModal";
-import type { RoomItem } from "./component/RoomCard/type";
+const mockData: RoomItem[] = [
+  {
+    roomName: "ker ker ABC room123",
+    roomType: "open",
+    personNum: 3,
+  },
+  {
+    roomName: "ker ker ABC room123",
+    roomType: "closed",
+    personNum: 4,
+  },
+  {
+    roomName: "ker ker ABC room123",
+    roomType: "underway",
+    personNum: 3,
+  },
+];
 
 const Lobbies = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState<string>("Player Name");
   const [editNameModal, setEditNameModal] = useState<boolean>(false);
   const [addRoomModal, setAddRoomModal] = useState<boolean>(false);
-  const [roomList, setRoomList] = useState<RoomItem[]>([
-    {
-      roomName: "ker ker ABC room123",
-      roomType: "open",
-      personNum: 3,
-    },
-    {
-      roomName: "ker ker ABC room123",
-      roomType: "closed",
-      personNum: 4,
-    },
-    {
-      roomName: "ker ker ABC room123",
-      roomType: "underway",
-      personNum: 3,
-    },
-  ]);
+  const [roomList, setRoomList] = useState<RoomItem[] | []>([]);
 
+  // modal controller
   const openEditNameModal = () => {
     setEditNameModal(true);
   };
@@ -43,24 +44,29 @@ const Lobbies = () => {
     setUserName(value);
     closedEditNameModal();
   };
-  const handleAddRoom = useCallback(
-    (roomName: string) => {
-      const newRoomList: RoomItem[] = [
-        ...roomList,
-        {
-          roomName,
-          roomType: "open",
-          personNum: 0,
-        },
-      ];
-      setRoomList(newRoomList);
-      closedAddRoomModal();
-    },
-    [roomList],
-  );
-  const handleLogout = useCallback(() => {
+  // request controller
+  const handleGetRoomList = () => {
+    // TODO: get room list api
+    setRoomList(mockData);
+  };
+  const handleAddRoom = (roomName: string) => {
+    // TODO: post add room api
+    mockData.push({
+      roomName,
+      roomType: "open",
+      personNum: 0,
+    });
+    handleGetRoomList();
+    closedAddRoomModal();
+  };
+  const handleLogout = () => {
+    // TODO: post logout api
     navigate("/");
-  }, [navigate]);
+  };
+
+  useEffect(() => {
+    handleGetRoomList();
+  }, []);
 
   return (
     <div className="w-full h-screen pt-10 pl-10 pr-10 bg-[url('src/assets/bg-lobbies.webp')] bg-cover bg-center">

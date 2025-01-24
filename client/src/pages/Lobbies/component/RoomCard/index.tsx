@@ -1,5 +1,17 @@
 import { useMemo } from "react";
-import type { RoomItem } from "./type";
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const enum RoomType {
+  OPEN = "open",
+  CLOSED = "closed",
+  UNDERWAY = "underway",
+}
+
+export type RoomItem = {
+  roomType: "open" | "closed" | "underway";
+  roomName: string;
+  personNum: number;
+};
 
 export type Props = RoomItem & {
   className?: string;
@@ -7,10 +19,10 @@ export type Props = RoomItem & {
 
 const RoomCard = ({ roomType, personNum, roomName, className }: Props) => {
   const roomTypeText = useMemo(() => {
-    if (roomType === "open") {
+    if (roomType === RoomType.OPEN) {
       return "開放中";
     }
-    if (roomType === "closed") {
+    if (roomType === RoomType.CLOSED) {
       return "即將開始";
     }
     return "遊戲中";
@@ -20,13 +32,13 @@ const RoomCard = ({ roomType, personNum, roomName, className }: Props) => {
     <div
       className={`w-[278px] h-[194px] border-4  rounded-3xl bg-room-card-gradient flex flex-col justify-end items-center relative 
       ${className}
-      ${roomType === "open" && "shadow-blue"} 
-      ${roomType === "open" ? "border-active" : "border-white"}
+      ${roomType === RoomType.OPEN && "shadow-blue"} 
+      ${roomType === RoomType.OPEN ? "border-active" : "border-white"}
       `}
     >
       <div
         className={`w-[110px] h-[46px] rounded-[30px] absolute top-[-21px] left-[76px] flex justify-center items-center text-primary text-[20px] 
-        ${roomType === "open" ? "bg-active" : "bg-gray-100"}`}
+        ${roomType === RoomType.OPEN ? "bg-active" : "bg-gray-100"}`}
       >
         {roomTypeText}
       </div>

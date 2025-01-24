@@ -10,4 +10,5 @@
 	--text-active: rgba(131, 255, 220, 1);
 	--btn-submit-text: rgba(152, 32, 0, 1);
 	--modal-overlay: rgba(15, 42, 48, 0.9);
+	--overlay: rgba(255, 255, 255, 0);
 }
