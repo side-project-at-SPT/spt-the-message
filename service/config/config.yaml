@@ -1,8 +1,8 @@
 mode: dev
 
 Server:
-  RunMode: debug
-  HttpPort: 8080
+  Mode: debug
+  Port: :3000
 
 Database:
   DBType: postgres

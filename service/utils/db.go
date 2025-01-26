@@ -1,11 +1,12 @@
 package utils
 
 import (
-	//"database/sql"
 	"database/sql"
 	"fmt"
 	_ "github.com/lib/pq"
 )
+
+var DB *sql.DB
 
 func InitDB() {
 	fmt.Println("InitDB")
@@ -14,5 +15,6 @@ func InitDB() {
 
 	// open database
 	db, err := sql.Open("postgres", psqlconn)
+	DB = db
 	fmt.Println(db, err)
 }
