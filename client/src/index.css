@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--text-primary: rgba(0, 105, 137, 1);
+	--text-warning: rgba(249, 58, 83, 1);
+	--text-success: rgba(0, 205, 157, 1);
+	--text-white: rgba(255, 255, 255, 1);
+	--text-active: rgba(131, 255, 220, 1);
+	--btn-submit-text: rgba(152, 32, 0, 1);
+	--modal-overlay: rgba(15, 42, 48, 0.9);
+	--overlay: rgba(255, 255, 255, 0);
+}
