@@ -1,5 +1,5 @@
 run:
-	ENV=local go run main.go
+	go build main.go
 
 tidy:
 	go mod tidy
@@ -9,3 +9,6 @@ install:
 
 docker-up:
 	docker compose up -d
+
+lint:
+	golangci-lint run

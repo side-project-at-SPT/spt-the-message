@@ -9,5 +9,9 @@ func UserRouter(route *gin.RouterGroup) {
 	userRoute := route.Group("/user")
 	{
 		userRoute.POST("/login", controllers.Login)
+
+		// Google Auth
+		userRoute.POST("/callback", controllers.Login)
+		userRoute.GET("/callback", controllers.Login)
 	}
 }

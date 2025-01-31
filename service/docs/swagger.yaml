@@ -1,0 +1,22 @@
+info:
+  contact: {}
+paths:
+  /v1/user/login:
+    post:
+      parameters:
+      - description: email
+        in: formData
+        name: email
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: User Login
+      tags:
+      - User
+swagger: "2.0"

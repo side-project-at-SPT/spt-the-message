@@ -13,3 +13,7 @@ Database:
   Charset: utf8
   MaxIdleConns: 10
   MaxOpenConns: 30
+
+GoogleAuth:
+  ClientId:
+  Secret: 
