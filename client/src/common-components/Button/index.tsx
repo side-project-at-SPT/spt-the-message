@@ -12,10 +12,10 @@ type Props = {
 };
 
 const defaultClass =
-  "w-[140px] h-[50px] rounded-[30px]  hover:shadow-transparent hover:translate-y-0.5 border-[1px] text-xl";
+  "w-[140px] h-[50px] rounded-[30px] hover:shadow-transparent hover:translate-y-0.5 border-[1px] text-xl";
 const Button = ({ buttonType, buttonText, onClick, className }: Props) => {
   const style: string = useMemo(() => {
-    if (buttonType === "cancel") {
+    if (buttonType === ButtonType.Cancel) {
       return `${defaultClass} ${className} bg-gray-grad-dark shadow-gray text-white border-gray-100`;
     }
 
@@ -23,7 +23,7 @@ const Button = ({ buttonType, buttonText, onClick, className }: Props) => {
   }, [buttonType, className]);
 
   return (
-    <button className={style} onClick={onClick}>
+    <button className={style} onClick={onClick} type="button">
       {buttonText}
     </button>
   );

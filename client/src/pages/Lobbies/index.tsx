@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import RoomCard, { RoomItem } from "./component/RoomCard";
 import InputModal from "../../common-components/InputModal";
+import AddRoomModal from "./component/AddRoomModal";
+import LogoutModal from "./component/LogoutModal";
 const mockData: RoomItem[] = [
   {
     roomName: "ker ker ABC room123",
@@ -25,6 +27,7 @@ const Lobbies = () => {
   const [userName, setUserName] = useState<string>("Player Name");
   const [editNameModal, setEditNameModal] = useState<boolean>(false);
   const [addRoomModal, setAddRoomModal] = useState<boolean>(false);
+  const [logoutModal, setLogoutModal] = useState<boolean>(false);
   const [roomList, setRoomList] = useState<RoomItem[] | []>([]);
 
   // modal controller
@@ -39,6 +42,12 @@ const Lobbies = () => {
   };
   const closedAddRoomModal = () => {
     setAddRoomModal(false);
+  };
+  const openLogoutModal = () => {
+    setLogoutModal(true);
+  };
+  const closedLogoutModal = () => {
+    setLogoutModal(false);
   };
   const handleEditName = (value: string) => {
     setUserName(value);
@@ -80,13 +89,17 @@ const Lobbies = () => {
         />
       )}
       {addRoomModal && (
-        <InputModal
-          title="新增房間"
-          open={addRoomModal}
-          defaultName=""
-          submitBtnText="新增"
+        <AddRoomModal
           onCancel={closedAddRoomModal}
           onSubmit={handleAddRoom}
+          open={addRoomModal}
+        />
+      )}
+      {logoutModal && (
+        <LogoutModal
+          open={logoutModal}
+          onSubmit={handleLogout}
+          onCancel={closedLogoutModal}
         />
       )}
       <div className="w-full flex items-center justify-between">
@@ -99,11 +112,10 @@ const Lobbies = () => {
               onClick={openEditNameModal}
             />
           </div>
-          <p className="ml-4 text-primary text-lg">在線人數 49 人</p>
         </div>
         <button
           className="w-16 h-16 bg-[url('src/assets/icon/icon-return.webp')] bg-center bg-contain bg-no-repeat"
-          onClick={handleLogout}
+          onClick={openLogoutModal}
         />
       </div>
       {/* main */}
