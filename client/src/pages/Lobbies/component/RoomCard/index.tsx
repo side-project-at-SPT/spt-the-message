@@ -30,11 +30,10 @@ const RoomCard = ({ roomType, personNum, roomName, className }: Props) => {
 
   return (
     <div
-      className={`w-[278px] h-[194px] border-4  rounded-3xl bg-room-card-gradient flex flex-col justify-end items-center relative 
-      ${className}
-      ${roomType === RoomType.OPEN && "shadow-blue"} 
-      ${roomType === RoomType.OPEN ? "border-active" : "border-white"}
-      `}
+      className={`w-[278px] h-[194px] border-4  rounded-3xl bg-room-card-gradient flex flex-col justify-end items-center relative cursor-pointer
+        ${className}
+        ${roomType === RoomType.OPEN && "shadow-blue"} 
+        ${roomType === RoomType.OPEN ? "border-active" : "border-white"}`}
     >
       <div
         className={`w-[110px] h-[46px] rounded-[30px] absolute top-[-21px] left-[76px] flex justify-center items-center text-primary text-[20px] 

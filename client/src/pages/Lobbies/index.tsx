@@ -137,7 +137,7 @@ const Lobbies = () => {
                 roomType={roomType}
                 personNum={personNum}
                 key={roomName + index}
-                className="mb-10 mr-7"
+                className="mb-10 mr-7 hover:translate-y-px hover:shadow-transparent"
               />
             ),
           )}
